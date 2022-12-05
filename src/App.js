@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Login from './components/Login';
+import Register from './components/Register';
+import Forgotpass from './components/Forgotpass';
+import Resetpass from './components/Resetpass';
+import Urlshortner from './components/Urlshortner';
+import {Routes, Route} from 'react-router-dom';
+import Home from './components/Home';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
+      <Route path="/forgotpassword" element={<Forgotpass/>}/>
+      <Route path="/resetpassword" element={<Resetpass/>}/>
+      <Route path="/urlshortner" element={<Urlshortner/>}/>
+      
+    </Routes>
     </div>
   );
 }
